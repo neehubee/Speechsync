@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Baby, Users, Star, Trophy, Crown } from 'lucide-react';
+import { useNavigate } from 'react-router-dom'; 
 import './Welcome.css';
 
 const WelcomePage = () => {
@@ -7,6 +8,7 @@ const WelcomePage = () => {
   const [selectedLevel, setSelectedLevel] = useState(null);
   const [ageIndex, setAgeIndex] = useState(0);
   const [levelIndex, setLevelIndex] = useState(0);
+  const navigate = useNavigate();
 
   const ageGroups = [
     {
@@ -72,7 +74,7 @@ const WelcomePage = () => {
 
   const handleSelection = () => {
     if (selectedAge && selectedLevel) {
-      alert(`Selected: ${selectedAge} - ${selectedLevel}`);
+      navigate(`/practice/${selectedAge}/${selectedLevel}`);
       // Here you would navigate to the next page or handle the selection
     }
   };
