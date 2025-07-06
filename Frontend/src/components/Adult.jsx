@@ -5,7 +5,7 @@ import { Mic, StopCircle, Upload, ChevronLeft, ChevronRight } from 'lucide-react
 const Adult = () => {
   // For demo purposes, defaulting to 'beginner' level
   // In your actual app, you'll get this from useParams
-  const { level } = useParams();
+  const { age, level } = useParams();
   const navigate = useNavigate();
 
   const validLevels = ['beginner', 'intermediate', 'advanced'];
@@ -74,6 +74,7 @@ const Adult = () => {
   };
 
   return (
+    
     <div className="adult-container">
       <style>{`
         .adult-container {
@@ -186,7 +187,7 @@ const Adult = () => {
           box-shadow: 0 2px 4px rgba(74, 85, 104, 0.3);
         }
       `}</style>
-
+      
       <h1 className="adult-heading">Adult - {level.charAt(0).toUpperCase() + level.slice(1)} Level</h1>
 
       <div className="content-section">
